@@ -1,0 +1,7 @@
+Sample	ExpDay	Class
+Gene1	1st	Case
+Gene2	1st	Control
+Gene3	1st	Control
+Gene4	2nd	Control
+Gene5	2nd	Case
+Gene6	2nd	Case

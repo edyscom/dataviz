@@ -1,0 +1,5 @@
+Sample	CpG1	CpG2	CpG3	CpG4	CpG5
+SampleA	0.2	0.3	0.05	0.3	0.2
+SampleB	0.1	0.3	0.1	0.1	0.1
+SampleC	0.05	0.4	0.0	0.1	0.05
+SampleD	0.15	0.4	0.6	0.1	0.05

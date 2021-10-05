@@ -1,0 +1,17 @@
+
+mat1 <- read.table("__FILE__", header=T, sep='\t' ,row.names=1,comment.char="#")
+png("scatterPlot___SAMPLE__.png", width = 800, height = 800, pointsize = 12, bg = "white")
+
+cor(mat1$'val1', mat1$'val2')
+
+par(mar=c(6,5,5,3))
+
+plot(mat1$'val1', mat1$'val2',xlab="new val",ylab="old val",main="__SAMPLE__",cex.lab=2,cex.axis=2,cex.main=2)
+
+par(ps=24)
+
+lm.obj<-lm(mat1$'val1'~mat1$'val2')
+abline(lm.obj,col=2)
+mtext(substitute(paste(R^2,"=",x),list(x=round(summary(lm.obj)$r.squared,digits=5))),line=-1,col=2,adj=0)
+
+graphics.off()

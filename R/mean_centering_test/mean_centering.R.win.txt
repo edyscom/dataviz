@@ -1,0 +1,33 @@
+
+###Mean-Centering により、Batch差を補正するスクリプト
+###注意点 補正を行っても良いかどうか検証しているか要確認
+###本スクリプトでは、補正のみを行います。
+
+
+### pamr Libraryをインストールしておく
+library("pamr")
+
+#### 入力の発現値マトリックス　 行:遺伝子 or Probe  列:サンプル
+### 適宜 input.tabの所を編集 
+exprsFile <- "input.tab"
+exprs <- as.matrix(read.table (exprsFile, header=TRUE , sep="\t", row.names=1,as.is=TRUE))
+
+
+### サンプルごとの情報(実験日、Classの情報)
+### タブ区切りのマトリックスを作成すること。もしくはsep="\t"のところを変更
+pDataFile <- "./pData.txt"
+pData <- read.table(pDataFile,row.names=1,header=TRUE,sep="\t")
+
+
+
+
+batch = pData$ExpDay
+mydata <- list(x=exprs,y=factor(pData$Class),batchlabels=factor(batch))
+###
+
+mydata_mod = pamr.batchadjust(mydata)
+
+### output~ という名前で補正後のマトリックスを出力
+### 適宜 output_meanCentering.txt の所を編集  
+write.table(mydata_mod$x,"output_meanCentering.txt",sep="\t",quote=FALSE,col.names=NA)
+

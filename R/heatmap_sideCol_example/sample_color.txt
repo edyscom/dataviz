@@ -1,0 +1,16 @@
+Sample	Color
+E1	red
+E2	red
+E3	red
+F1	blue
+F2	blue
+F3	blue
+G1	yellow
+G2	yellow
+G3	yellow
+H1	green
+H2	green
+H3	green
+I1	pink
+I2	pink
+I3	pink

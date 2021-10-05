@@ -1,0 +1,1 @@
+nkf --windows mean_centering.R > mean_centering.R.win.txt

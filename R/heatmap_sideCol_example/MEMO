@@ -1,0 +1,3 @@
+head -11 ../gene_color.txt > gene_color.txt
+perl GeneList2ExpSet_input_byList.pl gene_color.txt GvsE_modT_FDR1.txt > gene_exp_table.txt
+R --vanilla < heatmap_sideColor.R
